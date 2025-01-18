@@ -1,33 +1,36 @@
-import Image from "next/image";
-import { ContactList } from "./components/ContactList";
+import { Card } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div>
-          <div className="text-9xl font-bold tracking-tighter">Socialize.</div>
-          Optimize your social life.
+    <div className=" min-h-dvh">
+      <div className="text-9xl font-bold tracking-tighter text-coolors-emerald-300">
+        Socialize.
+      </div>
+      <div className="ml-12 text-2xl text-coolors-charcoal-200">
+        Optimize your social life.
+      </div>
+      <div className="flex flex-1 flex-col gap-4 p-4 pt-0  mt-12">
+        <div className="grid auto-rows-min gap-12 md:grid-cols-3 align-middle text-4xl text-coolors-charcoal-300">
+          <Card className=" grid h-48 text-center content-center bg-coolors-emerald-900">
+            Reminders
+          </Card>
+          <Card className=" grid h-48 text-center content-center bg-coolors-emerald-900">
+            Templates
+          </Card>
+          <Card className=" grid h-48 text-center content-center bg-coolors-emerald-900">
+            Log Interaction
+          </Card>
+          <Card className=" grid h-48 text-center content-center bg-coolors-emerald-900">
+            Groups
+          </Card>
+          <Card className=" grid h-48 text-center content-center bg-coolors-emerald-900">
+            Notes
+          </Card>
+          <Card className=" grid h-48 text-center content-center bg-coolors-emerald-900">
+            Settings
+          </Card>
         </div>
-        <ContactList />
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://github.com/aprilschuppel"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/github-mark.svg"
-            alt="GitHub logo"
-            width={16}
-            height={16}
-          />
-          repo
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }

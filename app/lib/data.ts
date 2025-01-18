@@ -17,6 +17,23 @@ export async function fetchContacts() {
   }
 }
 
+export async function fetchInteractions() {
+  try {
+    const data = await sql`
+          SELECT *
+          FROM contact_interactions
+          ORDER BY date DESC
+        `;
+
+    const interactions = data.rows;
+    return interactions;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch all interactions.");
+  }
+}
+
+
 export async function fetchContactDetails(id: number) {
   try {
     const data = await sql<Contact>`
