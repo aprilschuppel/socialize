@@ -93,7 +93,7 @@ export default function ContactProfile({ contact }: { contact: Contact }) {
                   <div className="mt-4 ">
                     <h3 className="text-lg font-bold mt-2">Social Media</h3>
 
-                    {contact.links.map((link: any) => (
+                    {contact.links.map((link: {link: string, platform: string}) => (
                       <div key={link.platform}>
                         <SocialMediaLink
                           platform={link.platform}
