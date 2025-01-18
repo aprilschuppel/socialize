@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     domains: [
-      "cdn.jsdelivr.net"
+      "cdn.jsdelivr.net",
+      "upload.wikimedia.org"
     ]
   }
 };
