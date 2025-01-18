@@ -1,16 +1,10 @@
 "use client";
 
 import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
+  Disclosure
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -35,7 +29,7 @@ export default function NavBar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             {/* logo */}
             <div className="flex shrink-0 items-center">
-              <img
+              <Image
                 alt="Socialize S"
                 src="/socialize-s.png"
                 className="h-8 w-auto"

@@ -1,14 +1,6 @@
 import ContactProfile from "../../components/ContactProfile";
 import { fetchContactDetails } from "../../lib/data";
 import { notFound } from "next/navigation";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import NavBar from "@/app/components/NavBar";
 
 export default async function Page(props: { params: Promise<{ id: number }> }) {
   const params = await props.params;
