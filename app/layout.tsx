@@ -26,10 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full bg-coolors-peach_yellow-900 mt-24`}
       >
-        <NavBar/>
-        {children}
+        <NavBar />
+        <div className="flex flex-row">
+          <div className="basis-1/5"></div>
+          <div className="basis-3/5">{children}</div>
+          <div className="basis-1/5"></div>
+        </div>
       </body>
     </html>
   );

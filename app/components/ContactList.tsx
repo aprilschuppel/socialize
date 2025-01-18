@@ -16,24 +16,29 @@ const contacts = await fetchContacts();
 
 export function ContactList() {
   return (
-    <div className="bg-white flex min-h-screen flex-col items-center justify-top">
-      <Card className="p-4">
-        <CardHeader className='font-extrabold text-2xl'>Contact List</CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow className="text-md">
-                <TableHead className='w-[200px]'></TableHead>
-                <TableHead>Pref. Contact</TableHead>
-                <TableHead>Notes</TableHead>
-                <TableHead>Last Contacted</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {contacts.map((contact) => (
-                <TableRow key={contact.id}>
-                  <TableCell className='place-items-center'>
-                    <Avatar className="size-20 mb-2">
+    <Card className="p-4">
+      <CardHeader className="text-5xl font-bold tracking-tighter text-coolors-emerald-300">
+        Contact List
+      </CardHeader>
+      <CardContent>
+        <Table>
+          <TableHeader>
+            <TableRow className="text-xs">
+              <TableHead className="w-1/6"></TableHead>
+              <TableHead className="w-1/2">Notes</TableHead>
+              <TableHead className="w-1/6">Last Contacted</TableHead>
+              <TableHead className="w-1/6">Pref. Contact</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {contacts.map((contact) => (
+              <TableRow key={contact.id}>
+                <TableCell className="flex-auto">
+                  <Link
+                    className="text-center font-bold text-md"
+                    href={`/contacts/${contact.id}`}
+                  >
+                    <Avatar className="size-16 mb-2 mx-auto content-center">
                       <AvatarImage
                         src={contact.photo}
                         alt={`${contact.name} Photo`}
@@ -41,22 +46,19 @@ export function ContactList() {
                       />
                       <AvatarFallback></AvatarFallback>
                     </Avatar>
-                    <Link className='text-center font-bold text-lg' href={`/profile/${contact.id}`}>{contact.name}</Link>
-                  </TableCell>
-                  <TableCell>{contact.preferredContactMethod}</TableCell>
-                  <TableCell>{contact.notes}</TableCell>
-                  <TableCell>
-                    {formatDateWithDaysSince(
-                      new Date(contact.lastContact),
-                      true
-                    )}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
-    </div>
+                    <div className="text-center">{contact.name}</div>
+                  </Link>
+                </TableCell>
+                <TableCell>{contact.notes}</TableCell>
+                <TableCell className="text-xs">
+                  {formatDateWithDaysSince(new Date(contact.lastContact), true)}
+                </TableCell>
+                <TableCell>{contact.preferredContactMethod}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </CardContent>
+    </Card>
   );
 }
