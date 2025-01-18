@@ -11,7 +11,7 @@ import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 export default function ContactProfile({ contact }: { contact: Contact }) {
   console.log(contact);
   return (
-    <div className="bg-white p-24 flex min-h-screen flex-col items-center justify-top">
+    <div className="bg-white flex min-h-screen flex-col items-center justify-top">
       <Card className="w-4/5">
         <CardContent>
           <div className="">
@@ -64,16 +64,6 @@ export default function ContactProfile({ contact }: { contact: Contact }) {
                   </div>
 
                   <div className="mt-10">
-                    {/* <h3 className="text-md font-bold text-gray-900">
-                      Interests
-                    </h3>
-                    <div className="text-base text-gray-900">
-                      <ul role="list" className="list-disc pl-4">
-                        {contact.interests.map((interest) => (
-                          <li key={interest}>{interest}</li>
-                        ))}
-                      </ul>
-                    </div> */}
                   </div>
                 </div>
               </div>
@@ -103,14 +93,6 @@ export default function ContactProfile({ contact }: { contact: Contact }) {
                     ))}
                   </div>
                 ) : null}
-                {/* <div className="mt-2">
-                  <h3 className="text-lg font-bold">Groups</h3>
-                  <ul role="list" className="list-disc pl-4">
-                    {contact.groups.map((group) => (
-                      <li key={group}>{group}</li>
-                    ))}
-                  </ul>
-                </div> */}
               </div>
             </div>
           </div>

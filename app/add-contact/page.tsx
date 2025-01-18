@@ -3,7 +3,7 @@ import { AddContactForm } from "../components/AddContactForm";
 
 export default function Page () {
     return (
-        <div className='flex justify-center items-center py-10'>
+        <div className='flex justify-center items-center pt-20'>
             <Card>
                 <CardHeader className='font-bold'>
                     Add a new contact
