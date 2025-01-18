@@ -36,12 +36,13 @@ export type Person = {
     organizations?: string[]; // IDs of organizations this person belongs to
   };
   
-  // Represents an interaction with a person
+  // Represents an interaction with a contact
   export type Interaction = {
-    date: Date; // Date of the interaction
-    type: 'Meeting' | 'Message' | 'Call' | 'Other'; // export type of interaction
-    platform?: 'LinkedIn' | 'In-person' | 'Phone' | 'Email' | 'Other'; // Platform where the interaction occurred
-    notes?: string; // Any notes about the interaction
+    contactId: string;
+    date: string;
+    type: string;
+    platform: string;
+    notes: string;
   };
   
   // Represents an event (e.g., conference, meetup)

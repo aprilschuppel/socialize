@@ -23,8 +23,7 @@ export function ContactList() {
           <Table>
             <TableHeader>
               <TableRow className="text-md">
-                <TableHead></TableHead>
-                <TableHead>Name</TableHead>
+                <TableHead className='w-[200px]'></TableHead>
                 <TableHead>Pref. Contact</TableHead>
                 <TableHead>Notes</TableHead>
                 <TableHead>Last Contacted</TableHead>
@@ -33,8 +32,8 @@ export function ContactList() {
             <TableBody>
               {contacts.map((contact) => (
                 <TableRow key={contact.id}>
-                  <TableCell>
-                    <Avatar className="size-24">
+                  <TableCell className='place-items-center'>
+                    <Avatar className="size-20 mb-2">
                       <AvatarImage
                         src={contact.photo}
                         alt={`${contact.name} Photo`}
@@ -42,9 +41,7 @@ export function ContactList() {
                       />
                       <AvatarFallback></AvatarFallback>
                     </Avatar>
-                  </TableCell>
-                  <TableCell>
-                    <Link href={`/profile/${contact.id}`}>{contact.name}</Link>
+                    <Link className='text-center font-bold text-lg' href={`/profile/${contact.id}`}>{contact.name}</Link>
                   </TableCell>
                   <TableCell>{contact.preferredContactMethod}</TableCell>
                   <TableCell>{contact.notes}</TableCell>
