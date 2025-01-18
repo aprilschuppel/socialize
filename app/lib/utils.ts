@@ -1,3 +1,4 @@
+
 export function getInitials(name: string) {
   const names = name.split(" ");
   let initials = "";
@@ -11,7 +12,7 @@ export function getInitials(name: string) {
   return initials;
 }
 
-export function formatDateWithDaysSince(date: Date): string {
+export function formatDateWithDaysSince(date: Date, showDays: boolean = true): string {
   const today = new Date();
   const diffTime = Math.abs(today.getTime() - date.getTime());
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -22,8 +23,24 @@ export function formatDateWithDaysSince(date: Date): string {
     day: "numeric",
   });
 
-  return `${formattedDate} (${diffDays} days ago)`;
+  return showDays ? `${diffDays} days ago` : formattedDate;
 }
 
-const date = new Date("2023-12-25");
-console.log(formatDateWithDaysSince(date)); // Output: December 25, 2023 (33 days ago)
+export function calculateAge(birthDate: Date, showDate: boolean = true): string | number {
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+
+  // Adjust age if the birthday hasn't occurred yet this year
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  };
+
+  const formattedDate = birthDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+
+  return showDate ? `${formattedDate} (${age} years old)` : age;
+}
