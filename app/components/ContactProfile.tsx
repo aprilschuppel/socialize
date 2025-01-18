@@ -1,20 +1,16 @@
 "use client";
 import { formatDateWithDaysSince, calculateAge } from "../lib/utils";
 import SocialMediaLink from "./SocialLink";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Contact } from "../lib/definitions";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"; 
 
 export default function ContactProfile({ contact }: { contact: Contact }) {
   console.log(contact);
   return (
-    <div className="bg-white flex min-h-screen flex-col items-center justify-top">
-      <Card className="w-4/5">
-        <CardContent>
-          <div className="">
+    <div className="">
             <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
               {/* Contact name and image */}
               <div className="flex lg:col-span-2 lg:pr-8">
@@ -95,9 +91,7 @@ export default function ContactProfile({ contact }: { contact: Contact }) {
                 ) : null}
               </div>
             </div>
+            
           </div>
-        </CardContent>
-      </Card>
-    </div>
   );
 }

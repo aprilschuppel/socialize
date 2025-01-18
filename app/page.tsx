@@ -6,7 +6,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <div>
-          <div className="text-2xl font-bold">Socialize.</div>
+          <div className="text-9xl font-bold tracking-tighter">Socialize.</div>
           Optimize your social life.
         </div>
         <ContactList />

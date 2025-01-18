@@ -32,7 +32,8 @@ export default function NavBar() {
               <Image
                 alt="Socialize S"
                 src="/socialize-s.png"
-                className="h-8 w-auto"
+                width="32"
+                height="32"
               />
             </div>
 
@@ -54,8 +55,8 @@ export default function NavBar() {
                       pathname === item.href ||
                         (item.href === "/profile" &&
                           pathname.startsWith("/profile"))
-                        ? " text-coolors-emerald-500 font-extrabold"
-                        : "text-coolors-emerald-100 hover:text-coolors-peach_yellow",
+                        ? " text-coolors-non_photo_blue-900 font-extrabold"
+                        : "text-coolors-lavender_blush-400 hover:text-coolors-emerald-500",
                       "rounded-md px-2 py-2 text-lg"
                     )}
                   >
