@@ -18,7 +18,7 @@ export default function ContactProfile({ contact }: { contact: Contact }) {
             <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
               {/* Contact name and image */}
               <div className="flex lg:col-span-2 lg:pr-8">
-                <Avatar className="size-24 border-2">
+                <Avatar className="size-24 ">
                   <AvatarImage
                     src={contact.photo}
                     alt={`${contact.name} Photo`}
@@ -93,7 +93,7 @@ export default function ContactProfile({ contact }: { contact: Contact }) {
                   <div className="mt-4 ">
                     <h3 className="text-lg font-bold mt-2">Social Media</h3>
 
-                    {contact.links.map((link: any) => (
+                    {contact.links.map((link: { platform: string; link: string }) => (
                       <div key={link.platform}>
                         <SocialMediaLink
                           platform={link.platform}

@@ -10,7 +10,15 @@ export type Contact = {
     targetFrequencyDays: number;
     favorite: boolean;
     interests: string[];
-    links: any;
+    links: { platform: string; link: string }[];
+
+};
+
+export type ContactTest = {
+  id: number;
+  name: string;
+  location: string;
+  notes: string;
 };
 
 // Represents a person in your network
